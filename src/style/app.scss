@@ -1,0 +1,44 @@
+@import "-mixin";
+:root {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.red {
+	color: red;
+}
+.purple {
+	color: rgb(47, 0, 255);
+}
+.green {
+	color: rgb(0, 195, 0);
+}
+
+.adminContainer {
+	@include grid(1fr 4fr, 2rem);
+	height: 100vh;
+	background-color: rgb(247, 247, 247);
+	> aside {
+		width: 100%;
+		background-color: white;
+		z-index: 10;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		> div {
+			margin: 2rem 1rem;
+			> h5 {
+				@include heading(2px);
+				opacity: 0.8;
+				margin: 1rem 0;
+			}
+		}
+	}
+}
